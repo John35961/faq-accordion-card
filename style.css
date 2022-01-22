@@ -1,0 +1,292 @@
+/* Global */
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    --white: hsl(100, 100%, 100%);
+    --transparent-black: hsla(0, 0%, 0%, 0.75);
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    --dark-soft-blue: hsl(240, 40%, 36%);
+    --very-dark-blue: hsl(238, 29%, 16%);
+    --light-grey: hsl(240, 5%, 91%);
+    --middle-grey: hsl(240, 6%, 50%);
+    --dark-grey: hsl(237, 12%, 33%);
+    --orange: hsl(14, 88%, 65%);
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    background: linear-gradient(to top, var(--soft-blue), var(--soft-violet));
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+}
+
+.container {
+    min-height: calc(100vh - 47px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block {
+    height: 550px;
+    display: flex;
+    width: 70vw;
+    max-width: 900px;
+    background-color: var(--white);
+    box-shadow: 0px 10px 50px -10px var(--transparent-black);
+    border-radius: 25px; 
+}
+
+
+/* Illustrations */
+
+.illus {
+    height: inherit;
+    min-width: 350px;
+    background-size: 250%;
+    background-image: url('/images/bg-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: 100% 68%;
+}
+
+.illus__woman-online-desktop {
+    height: inherit;
+    position: absolute;
+    min-width: 350px;
+    background-size: 125%;
+    background-image: url('/images/illustration-woman-online-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+}
+
+.illus__box-desktop {
+    position: relative;
+    top: 42%;
+    left: -24%;
+    animation-name: zoom-in-out;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes zoom-in-out {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
+.illus__box-desktop img {
+    height: 165px;
+    width: 165px;
+}
+
+.illus__woman-online-mobile {
+    display: none;
+}
+
+
+/* FAQ section */
+
+.faq {
+    margin: 50px 100px 50px 90px;
+}
+
+.faq__title {
+    color: var(--very-dark-blue);
+}
+
+
+/* Single question */
+
+.question {
+    margin: 20px 0px 20px 0px;
+    font-size: 12px;
+} 
+
+.question__title {
+    color: var(--dark-grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -10px 0px 10px 0px;
+    transition: color 0.1s;
+}
+
+.question__title:hover {
+    color: var(--orange);
+    cursor: pointer;
+    transition: color 0.1s;
+}
+
+.question__title h3 {
+    font-weight: 400;
+}
+
+.question__title--active h3 {
+    color: var(--very-dark-blue);
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.question__title img {
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+}
+
+.question__title--active img {
+    transform: rotate(180deg);
+    transition: transform 0.3s;
+}
+
+.question__title--active + .question__content {
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.question__content {
+    color: var(--middle-grey);
+    height: 0;
+    overflow: hidden;
+}
+
+.question__separator {
+    border-top: 1px solid var(--light-grey);
+}
+
+
+/* Author section */
+
+
+.author {
+    font-size: 12px;
+    color: var(--dark-soft-blue);
+    text-align: center;
+}
+
+.author a {
+    color: var(--transparent-black);
+}
+
+
+/* Laptop */
+
+@media screen and (max-width:1200px) {
+    .block {
+        height: 550px;
+    }
+    .faq {
+        margin: 50px;
+    }
+}
+
+
+/* Tablet */
+
+@media screen and (max-width:1000px) {
+    body {
+        margin-top: 100px;
+    }
+    .block {
+        height: auto;
+        width: 90vw;
+        flex-direction: column;
+    }
+    .faq {
+        margin: 15px 20px 45px 20px;
+    }
+    .faq__title {
+        text-align: center;
+    }
+    .faq__questions {
+        width: 100%;
+    }
+    .illus {
+        display: flex;
+        justify-content: center;
+        height: 100px;
+        background-size: 255px;
+        background-position: 50% 100%;
+    }
+    .illus__woman-online-desktop,
+    .illus__box-desktop {
+        display: none;
+    }
+    .illus__woman-online-mobile {
+        display: block;
+        position: relative;
+        width: 250px;
+        top: -115px;
+    }
+}
+
+
+/* Large mobile */
+
+@media screen and (max-width:475px) {
+    body {
+        margin-top: 80px;
+    }
+    .illus {
+        height: 110px;
+        background-size: 235px;
+        background-position: 50% 105%;
+    }
+    .illus__woman-online-mobile {
+        width: 235px;
+        top: -100px;
+    }
+}
+
+
+/* Small mobile */
+
+@media screen and (max-width:375px) {
+    body {
+        margin-top: 65px;
+    }
+    .illus {
+        height: 80px;
+        background-size: 200px;
+        background-position: 50% 100%;
+    }
+    .illus__woman-online-mobile {
+        width: 200px;
+        top: -90px;
+    }
+}
+
+
+/* Extra small mobile */
+
+@media screen and (max-width:350px) {
+    .illus,
+    .illus__woman-online-mobile {
+        display: none;
+    }
+}
+
+
+/* Landscape */
+
+@media screen and (max-height:600px) {
+    body {
+        margin-top: 50px;
+    }
+    .block {
+        margin-bottom: 50px;
+    }
+    .illus,
+    .illus__woman-online-mobile {
+        display: none;
+    }
+}
