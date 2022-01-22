@@ -2,7 +2,7 @@
 
 ### About
 Challenge from [Frontent Mentor](https://www.frontendmentor.io/), asking to integrate a FAQ accordion card component, based on an example image, plus a few colors, sizes and active states indications.
-- [Live result]()
+- [Live result](https://faq-accordion-card-iota-khaki.vercel.app/)
 - [Challenge's page](https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam)
 
 ### Tools
